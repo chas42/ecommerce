@@ -1,0 +1,26 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="202407102140000" author="chas">
+
+        <createTable tableName="product_tags">
+
+            <column name="product_id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+
+            <column name="tag_id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="product_tags" baseColumnNames="product_id"
+            constraintName="fk_product_tag_product_id" referencedTableName="products" referencedColumnNames="id" />
+        <addForeignKeyConstraint baseTableName="product_tags" baseColumnNames="tag_id"
+            constraintName="fk_product_tag_tag_id" referencedTableName="tags" referencedColumnNames="id" />
+
+    </changeSet>
+
+</databaseChangeLog>
