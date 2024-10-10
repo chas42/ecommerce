@@ -1,19 +1,24 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
-    <changeSet id="202407102120000" author="chas">
 
-        <createTable tableName="merchants">
+    <changeSet id="202407102160000" author="chas">
+
+        <createTable tableName="orders">
 
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false" />
             </column>
 
-            <column name="name" type="varchar(255)">
+            <column name="status" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
 
-            <column name="createdAt" type="timestamp" defaultValue="NOW()" >
+            <column name="total" type="DOUBLE">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="createdAt" type="timestamp" defaultValue="NOW()">
                 <constraints nullable="false" />
             </column>
 
@@ -25,7 +30,7 @@
 
         </createTable>
 
-        <addForeignKeyConstraint baseTableName="merchants" baseColumnNames="user_id" constraintName="fk_merchants_user_id"
+        <addForeignKeyConstraint baseTableName="orders" baseColumnNames="user_id" constraintName="fk_order_user_id"
             referencedTableName="ecommerce_user" referencedColumnNames="id" />
 
     </changeSet>

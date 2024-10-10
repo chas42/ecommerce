@@ -1,5 +1,6 @@
 package com.ecommerce.model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -12,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-// @Entity(name = "order_items")
+@Entity(name = "order_items")
 public class OrderItem {
 
     @Id
@@ -23,5 +24,8 @@ public class OrderItem {
     @ManyToOne
     @JoinColumn(name = "product_id", referencedColumnName = "id")
     private Product product;
+
+    @ManyToOne
+    private Order order;
 
 }

@@ -6,7 +6,7 @@
 
         <createTable tableName="product_tags">
 
-            <column name="product_id" type="BIGINT">
+            <column name="product_id" type="BIGINT" >
                 <constraints primaryKey="true" nullable="false" />
             </column>
 

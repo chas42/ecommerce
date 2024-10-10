@@ -2,6 +2,8 @@ package com.ecommerce.model;
 
 import java.time.LocalDateTime;
 
+import com.ecommerce.dto.MerchantCreateDTO;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,6 +17,11 @@ import lombok.Setter;
 @Setter
 @Entity(name = "merchants")
 public class Merchant {
+
+    public Merchant(String name, User user) {
+        this.name = name;
+        this.user = user;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

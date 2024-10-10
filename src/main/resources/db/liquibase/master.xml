@@ -12,6 +12,10 @@
         relativeToChangelogFile="false" />
     <include file="classpath:db/liquibase/changelog/20240710215000_added_entity_product_tags.xml"
         relativeToChangelogFile="false" />
+    <include file="classpath:db/liquibase/changelog/20240710216000_added_entity_order.xml"
+        relativeToChangelogFile="false" />
+    <include file="classpath:db/liquibase/changelog/20240710217000_added_entity_order_items.xml"
+        relativeToChangelogFile="false" />
 
 
 </databaseChangeLog>
