@@ -3,9 +3,9 @@ package com.ecommerce.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
-import com.ecommerce.dto.UserDTO;
-import com.ecommerce.dto.UserReadDTO;
-import com.ecommerce.dto.UserUpdateDTO;
+import com.ecommerce.dto.user.UserDTO;
+import com.ecommerce.dto.user.UserReadDTO;
+import com.ecommerce.dto.user.UserUpdateDTO;
 import com.ecommerce.service.UserService;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -36,7 +36,7 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseEntity<UserReadDTO> read(@PathVariable Long id) {
 
-        UserReadDTO userDTO = userService.read(id);
+        UserReadDTO userDTO = new UserReadDTO(userService.getUserById(id));
 
         return ResponseEntity.ok(userDTO);
 

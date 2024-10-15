@@ -3,7 +3,7 @@ package com.ecommerce.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ecommerce.dto.TagDTO;
+import com.ecommerce.dto.tag.TagDTO;
 import com.ecommerce.model.Tag;
 import com.ecommerce.repository.TagRepository;
 

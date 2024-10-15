@@ -2,6 +2,7 @@ package com.ecommerce.model;
 
 import java.util.Set;
 
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,7 +27,6 @@ public class Order {
     private Long id;
     private String status; // pending, processing, completed, delivered
     private Double total;
-
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -36,5 +36,13 @@ public class Order {
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<OrderItem> orderItems;
+
+    public void addOrderItem(OrderItem orderItem) {
+        orderItems.add(orderItem);
+    }
+
+    public void removeOrderItem(OrderItem orderItem) {
+        orderItems.remove(orderItem);
+    }
 
 }

@@ -3,9 +3,9 @@ package com.ecommerce.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ecommerce.dto.UserDTO;
-import com.ecommerce.dto.UserReadDTO;
-import com.ecommerce.dto.UserUpdateDTO;
+import com.ecommerce.dto.user.UserDTO;
+import com.ecommerce.dto.user.UserReadDTO;
+import com.ecommerce.dto.user.UserUpdateDTO;
 import com.ecommerce.model.User;
 import com.ecommerce.repository.UserRepository;
 
@@ -23,11 +23,11 @@ public class UserService {
 
     }
 
-    public UserReadDTO read(Long id) {
+    public User getUserById(Long id) {
 
         User user = userRepository.findById(id).get();
 
-        return new UserReadDTO(user);
+        return user;
 
     }
 

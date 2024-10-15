@@ -12,7 +12,7 @@ import lombok.Setter;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import com.ecommerce.dto.TagDTO;
+import com.ecommerce.dto.tag.TagDTO;
 
 @Getter
 @Setter

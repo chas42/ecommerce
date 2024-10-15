@@ -3,8 +3,9 @@ package com.ecommerce.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ecommerce.dto.MerchantCreateDTO;
-import com.ecommerce.dto.MerchantReadDTO;
+import com.ecommerce.dto.merchant.MerchantCreateDTO;
+import com.ecommerce.dto.merchant.MerchantReadDTO;
+import com.ecommerce.dto.merchant.MerchantUpdateDTO;
 import com.ecommerce.model.Merchant;
 import com.ecommerce.model.User;
 import com.ecommerce.repository.MerchantRepository;
@@ -40,8 +41,10 @@ public class MerchantService {
     public void updateMerchant(MerchantUpdateDTO merchantUpdateDTO) {
         Merchant merchant = merchantRepository.findById(merchantUpdateDTO.id()).orElse(null);
 
-        
-            // Update other fields as necessary
+        merchant.setName(merchantUpdateDTO.name());
+        merchant.setUser(userRepository.findById(merchantUpdateDTO.userId()).get());
+
+        merchantRepository.save(merchant);
     }
 
     public void deleteMerchant(Long id) {

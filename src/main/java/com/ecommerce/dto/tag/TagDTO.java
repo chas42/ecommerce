@@ -1,4 +1,4 @@
-package com.ecommerce.dto;
+package com.ecommerce.dto.tag;
 
 import com.ecommerce.model.Tag;
 

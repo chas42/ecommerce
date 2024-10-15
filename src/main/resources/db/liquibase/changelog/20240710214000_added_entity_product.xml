@@ -5,11 +5,11 @@
     <changeSet id="202407102140000" author="chas">
         
         <createTable tableName="products">
-
+            <!-- documentacao -->
             <column name="id" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false" />
             </column>
-
+            <!-- verificiar o tamanho dos caracteres -->
             <column name="name" type="varchar(255)">
                 <constraints nullable="false" />
             </column>

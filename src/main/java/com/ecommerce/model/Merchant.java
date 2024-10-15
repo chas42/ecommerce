@@ -2,7 +2,6 @@ package com.ecommerce.model;
 
 import java.time.LocalDateTime;
 
-import com.ecommerce.dto.MerchantCreateDTO;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -28,4 +28,9 @@ public class OrderItem {
     @ManyToOne
     private Order order;
 
+    public OrderItem(Product product, Integer quantity) {
+        this.product = product;
+        this.quantity = quantity;
+    }
+
 }
